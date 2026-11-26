@@ -1,13 +1,14 @@
 ---
 layout: home
 open_to:
-  badge: "Open to PhD & industry roles"
-  title: "Open to PhD and industry roles"
-  text: "I am applying to PhD programs for Fall 2027 and am also open to research and engineering roles. I would love to hear from labs and teams working on 3D perception, robotics, world models, or AI agents."
+  badge: "Open to ML & research roles"
+  title: "Open to ML and research engineering roles"
+  text: "I am looking for ML, AI, and research engineering roles at startups, big tech, and robotics and computer vision companies, and I am also applying to PhD programs for Fall 2027. I would love to hear from teams working on 3D perception, robotics, world models, or AI agents."
   topics:
-    - 3D reconstruction
-    - 3D foundation models
-    - Robot perception
+    - Research engineering
+    - Machine learning
+    - Computer vision & 3D
+    - Robotics
     - World models
     - AI agents
 news:
@@ -31,7 +32,7 @@ news:
     text: 'Started at <a href="https://www.trin.cam.ac.uk/">Trinity College, Cambridge</a> and joined Cambridge University Eco Racing.'
 ---
 
-I am an engineer working on *3D computer vision* and *AI agents*. I am interested in recovering reliable 3D structure from ordinary cameras, and in finding out which errors in that structure actually matter for robots and other systems that act on it.
+I build machine learning systems for *3D computer vision* and *AI agents*. I am interested in recovering reliable 3D structure from ordinary cameras, and in finding out which errors in that structure actually matter for robots and other systems that act on it.
 
 Currently, I am a Founding Platform Engineer at [Seal](https://seal.run) (YC S20), where I build Neil, an autonomous AI agent for pharmaceutical scientists: its sandboxed code execution, persistent memory, independent verifier, and evaluation framework.
 
