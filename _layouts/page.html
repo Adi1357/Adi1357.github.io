@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+{% if page.image.feature %}
+<div class="image-wrap">
+  <img src="{{ page.image.feature | prepend: '/images/' | prepend: site.url }}" alt="{{ page.title }}">
+</div>
+{% endif %}
+
+<section class="page-content">
+  <div class="container container--narrow">
+    <div class="page-header">
+      {% if page.title %}<h1>{{ page.title }}</h1>{% endif %}
+    </div>
+    <div class="article-wrap">
+      {{ content }}
+    </div>
+  </div>
+</section>

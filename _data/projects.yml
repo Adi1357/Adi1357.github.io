@@ -1,0 +1,54 @@
+# Projects
+# Fields: title, description, thumbnail, year, tags, links (list of {label, url}), featured (bool)
+
+- title: "Neil: An Autonomous AI Agent for Scientists"
+  description: "Building Neil at Seal: sandboxed code execution, persistent memory, an independent verifier, and an LLM evaluation framework."
+  thumbnail: "/images/projects/neil.svg"
+  year: 2026
+  tags: ["agents", "llm-evals"]
+  featured: true
+  links:
+    - label: "Seal"
+      url: "https://seal.run"
+
+- title: "Real-Time Surgical Tool-Tip Detection"
+  description: "One-day XRLabs challenge: two YOLO detectors that must agree. Fixing a keypoint-tolerance default cut median tip error over 4×."
+  thumbnail: "/images/projects/tooltip.svg"
+  year: 2026
+  tags: ["computer-vision", "detection"]
+  featured: true
+  links: []
+
+- title: "IoT Network SLA Monitoring and Anomaly Detection"
+  description: "At Eseye: IoT network SLA monitoring over MQTT and AWS, with unsupervised anomaly detection feeding a live dashboard."
+  thumbnail: "/images/projects/iot.svg"
+  year: 2024
+  tags: ["cloud", "anomaly-detection"]
+  featured: false
+  links: []
+
+- title: "Autonomous Block-Sorting Robot"
+  description: "Cambridge Integrated Design Project: co-wrote the C++ for a team-built Arduino robot that follows lines, searches by ultrasound, and classifies blocks magnetically."
+  thumbnail: "/images/projects/robot.svg"
+  year: 2023
+  tags: ["robotics", "embedded"]
+  featured: true
+  links: []
+
+- title: "Solar Car Telemetry"
+  description: "Cambridge University Eco Racing: STM32/XBee radio telemetry and the driver interface for solar cars built to race across Australia."
+  thumbnail: "/images/projects/solar.svg"
+  year: 2023
+  tags: ["embedded", "telemetry"]
+  featured: false
+  links: []
+
+- title: "Mars Lander Simulation"
+  description: "Cambridge coursework: wrote the autopilot for a C++ Mars lander simulator, controlling throttle, parachute, and attitude for a soft landing."
+  thumbnail: "/images/projects/lander.svg"
+  year: 2023
+  tags: ["simulation", "control"]
+  featured: false
+  links:
+    - label: "Code"
+      url: "https://github.com/Adi1357/Simulation-of-Mars-Lander"

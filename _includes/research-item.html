@@ -1,0 +1,28 @@
+{% assign pub = include.pub %}
+<div class="pub-item{% if pub.highlight %} pub-item--highlight{% endif %}">
+  {% include pub-thumb.html pub=pub %}
+  <div class="pub-item__body">
+    <div class="pub-item__title">
+      {% if pub.links.size > 0 %}
+      <a href="{{ pub.links[0].url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>
+      {% else %}{{ pub.title }}{% endif %}
+    </div>
+    <div class="pub-item__authors">{{ pub.authors }}</div>
+    <div class="pub-item__venue">
+      {% include pub-venue.html pub=pub %}
+    </div>
+    {% if pub.awards %}
+    <div class="pub-item__awards">
+      {% for award in pub.awards %}{% assign award_icon = award.icon | default: "🥇" %}<span class="pub-item__badge pub-item__badge--award"{% if award.title %} title="{{ award.title }}"{% endif %}><span class="badge-icon">{{ award_icon }}</span> {{ award.label }}</span>{% endfor %}
+    </div>
+    {% endif %}
+    {% if pub.description %}<div class="pub-item__desc">{{ pub.description }}</div>{% endif %}
+    {% if pub.links.size > 0 %}
+    <div class="pub-item__links">
+      {% for link in pub.links %}
+      <a href="{{ link.url }}" class="btn btn--sm btn--ghost" target="_blank" rel="noopener noreferrer">{% include link-icon.html label=link.label %}{{ link.label }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</div>

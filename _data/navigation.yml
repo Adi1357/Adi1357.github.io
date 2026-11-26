@@ -1,0 +1,13 @@
+# Site navigation links (the CV link is added from site.owner.cv when set)
+
+- title: Home
+  url: /
+
+- title: Research
+  url: /#research
+
+- title: Projects
+  url: /projects/
+
+- title: Contact
+  url: /contact/

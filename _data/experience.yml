@@ -1,0 +1,31 @@
+# Experience row (oldest first). mark = icon shown in the logo tile.
+
+- name: University of Cambridge
+  mark: "🎓"
+  role: MEng, Trinity College
+  date: Oct 2022 – Jun 2026
+  url: https://www.cam.ac.uk/
+
+- name: Marshall Futureworx
+  mark: "✈️"
+  role: Engineering Intern
+  date: Summer 2023
+  url: https://marshallgroup.co.uk/
+
+- name: Eseye
+  mark: "📡"
+  role: Software Intern
+  date: Summer 2024
+  url: https://www.eseye.com/
+
+- name: Lazard
+  mark: "📈"
+  role: Summer Analyst
+  date: Summer 2025
+  url: https://www.lazard.com/
+
+- name: Seal
+  mark: "🧪"
+  role: Founding Platform Engineer
+  date: Sep 2026 – Present
+  url: https://seal.run/
