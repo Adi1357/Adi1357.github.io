@@ -1,5 +1,13 @@
 ---
 layout: home
+lede: "I build machine learning systems for *3D computer vision* and *AI agents*. I am interested in recovering reliable 3D structure from ordinary cameras, and in finding out which errors in that structure actually matter for robots and other systems that act on it."
+highlights:
+  - stat: "#1"
+    label: "Ranked master's project in Information & Electrical Engineering, Cambridge"
+  - stat: "Top 75"
+    label: "Nationally in the British Physics and British Astrophysics Olympiads"
+  - stat: "Distinction"
+    label: "MEng in Information & Computer Engineering, University of Cambridge"
 open_to:
   badge: "Open to ML & research roles"
   title: "Open to ML and research engineering roles"
@@ -31,8 +39,6 @@ news:
   - date: "Oct 2022"
     text: 'Started at <a href="https://www.trin.cam.ac.uk/">Trinity College, Cambridge</a> and joined Cambridge University Eco Racing.'
 ---
-
-I build machine learning systems for *3D computer vision* and *AI agents*. I am interested in recovering reliable 3D structure from ordinary cameras, and in finding out which errors in that structure actually matter for robots and other systems that act on it.
 
 Currently, I am a Founding Engineer at [Seal](https://seal.run) (YC S20), where I build Neil, an autonomous AI agent for pharmaceutical scientists: its sandboxed code execution, persistent memory, independent verifier, and evaluation framework.
 

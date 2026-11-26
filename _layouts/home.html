@@ -29,6 +29,12 @@ layout: default
   <main class="main">
     <section class="sec" id="about">
       <h2 class="sec__label">About</h2>
+      {% if page.lede %}<div class="lede">{{ page.lede | markdownify }}</div>{% endif %}
+      {% if page.highlights %}
+      <ul class="stats">
+        {% for h in page.highlights %}<li><span class="stats__num">{{ h.stat }}</span><span class="stats__label">{{ h.label }}</span></li>{% endfor %}
+      </ul>
+      {% endif %}
       <div class="prose">{{ content }}</div>
       {% if page.open_to %}
       <div class="note">
