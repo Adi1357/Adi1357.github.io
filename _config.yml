@@ -1,41 +1,20 @@
-# Site wide configuration
-
-title:   Aditya Jain
-locale:           en_US
+title: Aditya Jain
 url: https://adi1357.github.io
-description: "Personal website of Aditya (Adi) Jain: 3D computer vision and AI agents. MEng, University of Cambridge; Founding Platform Engineer at Seal."
-
-
-# Jekyll configuration
-
-encoding: utf-8
-permalink:   /:categories/:title/
-markdown:    kramdown
-highlighter: rouge
-sass:
-  sass_dir: _sass
-  style: compressed
+description: "Aditya (Adi) Jain: 3D computer vision and AI agents. Founding Platform Engineer at Seal; MEng, University of Cambridge."
+markdown: kramdown
 plugins:
   - jekyll-sitemap
 
-kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  enable_coderay: false
-
-
-# Site owner
 owner:
   name: Aditya Jain
   avatar: avatar.jpg
-  depth_avatar: avatar-depth.png
-  bio: "Founding Platform Engineer, Seal · MEng, University of Cambridge"
+  role: Founding Platform Engineer at Seal
+  education: MEng, University of Cambridge
+  location: London, UK
   email: adi.jain1357@gmail.com
   github: Adi1357
   linkedin: adi-jain1
-  # Set to a PDF path (e.g. /files/cv.pdf) to show the CV button and nav link.
+  # Set to a PDF path (e.g. /files/cv.pdf) to show a CV link.
   cv:
 
-exclude: ["Gemfile", "Gemfile.lock", "LICENSE", "README.md", "_site", "vendor", ".bundle"]
+exclude: [Gemfile, Gemfile.lock, README.md, vendor, .bundle]

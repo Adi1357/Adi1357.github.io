@@ -1,218 +1,122 @@
 ---
 layout: default
 ---
+{% assign o = site.owner %}
+<div class="wrap">
+  <aside class="side">
+    <img class="side__photo" src="{{ '/images/' | append: o.avatar | relative_url }}" alt="Photo of {{ o.name }}" width="104" height="104">
+    <h1 class="side__name">{{ o.name }}</h1>
+    <p class="side__role">{{ o.role }}<br>{{ o.education }}</p>
+    {% if page.phd %}<a class="pill" href="#about"><span class="pill__dot" aria-hidden="true"></span>{{ page.phd.badge }}</a>{% endif %}
 
-{% assign avatar_url = '/images/' | append: site.owner.avatar | relative_url %}
-{% assign depth_url = '/images/' | append: site.owner.depth_avatar | relative_url %}
+    <nav class="toc" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#news">News</a>
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+    </nav>
 
-<!-- Hero -->
-<section class="hero">
-  <div class="container">
-    <div class="hero__inner">
-      <!-- Top row: photo + name/actions -->
-      <div class="hero__header">
-        <div class="hero__portrait">
-          <img src="{{ avatar_url }}" alt="{{ site.title }} photo" class="hero__photo sensor-avatar"
-            data-visible-src="{{ avatar_url }}" data-thermal-src="{{ depth_url }}" loading="eager">
-          <div class="hero__spectrum" role="group" aria-label="Sensor mode">
-            <button type="button" class="hero__spectrum-btn active" data-sensor-mode="visible" aria-pressed="true">RGB</button>
-            <span class="hero__spectrum-sep" aria-hidden="true"></span>
-            <button type="button" class="hero__spectrum-btn" data-sensor-mode="thermal" aria-pressed="false">Depth</button>
-          </div>
-        </div>
-        <div class="hero__intro">
-          <h1 class="hero__name">{{ site.owner.name }}</h1>
-          <p class="hero__tagline">{{ site.owner.bio }}</p>
-          <div class="hero__actions">
-            <a href="mailto:{{ site.owner.email }}" class="hero__btn hero__btn--primary">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-              </svg>
-              Email
-            </a>
-            {% if site.owner.cv %}
-            <a href="{{ site.owner.cv | relative_url }}" class="hero__btn hero__btn--outline" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                <polyline points="14 2 14 8 20 8" />
-              </svg>
-              CV
-            </a>
-            {% endif %}
-          </div>
-          <div class="hero__social">
-            {% include social-links.html class="hero__social-link" %}
-          </div>
-        </div>
+    <ul class="links">
+      <li><a href="mailto:{{ o.email }}">{% include icon.html name="mail" %}Email</a></li>
+      <li><a href="https://github.com/{{ o.github }}">{% include icon.html name="github" %}GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/{{ o.linkedin }}">{% include icon.html name="linkedin" %}LinkedIn</a></li>
+      {% if o.cv %}<li><a href="{{ o.cv | relative_url }}">{% include icon.html name="file" %}CV</a></li>{% endif %}
+    </ul>
+    <p class="side__loc">{% include icon.html name="pin" %}{{ o.location }}</p>
+  </aside>
+
+  <main class="main">
+    <section class="sec" id="about">
+      <h2 class="sec__label">About</h2>
+      <div class="prose">{{ content }}</div>
+      {% if page.phd %}
+      <div class="note">
+        <p class="note__title">{{ page.phd.title }}</p>
+        <p>{{ page.phd.text }}</p>
+        <ul class="tags">{% for t in page.phd.topics %}<li>{{ t }}</li>{% endfor %}</ul>
       </div>
-      <!-- Bio below, full width -->
-      <div class="hero__bio">
-        {{ content }}
-      </div>
-    </div>
-  </div>
-</section>
+      {% endif %}
+    </section>
 
-<!-- Open to opportunities -->
-{% if page.opportunity %}
-<section class="section--sm opportunity-section" aria-label="Open to opportunities">
-  <div class="container">
-    <div class="opportunity-shell">
-      <div class="opportunity-shell__glow" aria-hidden="true"></div>
-      <div class="opportunity-callout">
-        <div class="opportunity-callout__content">
-          <span class="opportunity-callout__badge">{{ page.opportunity.badge }}</span>
-          <p class="opportunity-callout__text">{{ page.opportunity.text }}</p>
-          {% if page.opportunity.topics %}
-          <ul class="opportunity-callout__topics">
-            {% for topic in page.opportunity.topics %}
-            <li class="opportunity-callout__topic">{{ topic }}</li>
-            {% endfor %}
-          </ul>
-          {% endif %}
+    <section class="sec" id="news">
+      <h2 class="sec__label">News</h2>
+      <ul class="news">
+        {% for item in page.news limit: 5 %}<li><span class="date">{{ item.date }}</span><span>{{ item.text }}</span></li>{% endfor %}
+      </ul>
+      {% if page.news.size > 5 %}
+      <details class="more">
+        <summary>Earlier</summary>
+        <ul class="news">
+          {% for item in page.news offset: 5 %}<li><span class="date">{{ item.date }}</span><span>{{ item.text }}</span></li>{% endfor %}
+        </ul>
+      </details>
+      {% endif %}
+    </section>
+
+    <section class="sec" id="research">
+      <h2 class="sec__label">Research</h2>
+      {% for r in site.data.research %}
+      <article class="work">
+        <figure class="work__fig"><img src="{{ r.image | relative_url }}" alt="{{ r.alt }}" loading="lazy"></figure>
+        <div>
+          <p class="work__meta">{{ r.venue }} · {{ r.year }}</p>
+          <h3 class="work__title">{{ r.title }}</h3>
+          <p class="work__by">{{ r.authors }}</p>
+          <p class="work__desc">{{ r.summary }}</p>
+          {% if r.awards %}<ul class="tags">{% for a in r.awards %}<li>{{ a }}</li>{% endfor %}</ul>{% endif %}
         </div>
-        <a href="mailto:{{ site.owner.email }}" class="btn btn--primary opportunity-callout__cta">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="2" y="4" width="20" height="16" rx="2" />
-            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-          </svg>
-          Email
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-{% endif %}
+      </article>
+      {% endfor %}
+    </section>
 
-<!-- News -->
-{% if page.news %}
-<section class="section--sm section--alt">
-  <div class="container">
-    <h2 class="section-heading">News</h2>
-    <div class="news-scroll">
-      <ul class="news-list">
-        {% for item in page.news %}
-        <li class="news-item">
-          <span class="news-item__date">{{ item.date }}</span>
-          <span>{{ item.text }}</span>
+    <section class="sec" id="projects">
+      <h2 class="sec__label">Projects</h2>
+      <div class="grid">
+        {% for p in site.data.projects %}
+        <article class="card{% if p.url %} card--link{% endif %}">
+          <p class="card__year">{{ p.year }}{% if p.kind %} · {{ p.kind }}{% endif %}</p>
+          <h3 class="card__title">{% if p.url %}<a href="{{ p.url }}">{{ p.title }}<span class="card__arrow" aria-hidden="true">↗</span></a>{% else %}{{ p.title }}{% endif %}</h3>
+          <p>{{ p.summary }}</p>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="sec" id="experience">
+      <h2 class="sec__label">Experience</h2>
+      <ol class="timeline">
+        {% for e in site.data.experience %}
+        <li{% if e.current %} class="now"{% endif %}>
+          <p class="tl__date">{{ e.date }}</p>
+          <p class="tl__role">{{ e.role }} · <a href="{{ e.url }}">{{ e.org }}</a></p>
+          {% if e.note %}<p class="tl__note">{{ e.note }}</p>{% endif %}
         </li>
         {% endfor %}
+      </ol>
+    </section>
+
+    <section class="sec" id="honors">
+      <h2 class="sec__label">Honors &amp; leadership</h2>
+      <ul class="honors">
+        {% for h in site.data.honors %}<li>{{ h }}</li>{% endfor %}
       </ul>
-    </div>
-  </div>
-</section>
-{% endif %}
+    </section>
 
-<!-- Research, with category tabs -->
-<section class="section" id="research">
-  <div class="container">
-    <h2 class="section-heading">Research</h2>
+    {% include foot.html %}
+  </main>
+</div>
 
-    <div class="pub-tabs" id="pub-tabs" role="tablist">
-      <button class="pub-tab" data-tab="selected" role="tab" aria-selected="false">Selected</button>
-      <button class="pub-tab active" data-tab="all" role="tab" aria-selected="true">All</button>
-      <button class="pub-tab" data-tab="3d-vision" role="tab" aria-selected="false">3D Vision</button>
-      <button class="pub-tab" data-tab="robotics" role="tab" aria-selected="false">Robotics</button>
-    </div>
-
-    <div class="pub-panel hidden" id="panel-selected" role="tabpanel">
-      <div class="stack">
-        {% assign featured = site.data.research | where: "featured", true %}
-        {% for pub in featured %}{% include research-item.html pub=pub %}{% endfor %}
-      </div>
-    </div>
-
-    <div class="pub-panel" id="panel-all" role="tabpanel">
-      {% assign by_year = site.data.research | group_by: "year" | sort: "name" | reverse %}
-      {% for year_group in by_year %}
-      <div class="year-group">
-        <h3 class="year-group__heading">{{ year_group.name }}</h3>
-        <div class="stack">
-          {% for pub in year_group.items %}{% include research-item.html pub=pub %}{% endfor %}
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-
-    {% assign category_ids = "3d-vision,robotics" | split: "," %}
-    {% for cat_id in category_ids %}
-    <div class="pub-panel hidden" id="panel-{{ cat_id }}" role="tabpanel">
-      {% assign cat_items = site.data.research | where_exp: "pub", "pub.categories contains cat_id" %}
-      {% assign cat_years = cat_items | group_by: "year" | sort: "name" | reverse %}
-      {% for year_group in cat_years %}
-      <div class="year-group">
-        <h3 class="year-group__heading">{{ year_group.name }}</h3>
-        <div class="stack">
-          {% for pub in year_group.items %}{% include research-item.html pub=pub %}{% endfor %}
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-    {% endfor %}
-  </div>
-</section>
-
-<!-- Featured Projects -->
-<section class="section--sm section--alt">
-  <div class="container">
-    <h2 class="section-heading">Selected Projects</h2>
-    <div class="grid grid--3">
-      {% assign featured_projects = site.data.projects | where: "featured", true %}
-      {% for project in featured_projects %}
-      <div class="card">
-        <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}" class="card__image" loading="lazy">
-        <div class="card__body">
-          <h3 class="card__title">{{ project.title }}</h3>
-          <p class="card__meta">{{ project.year }}</p>
-          <p class="card__desc">{{ project.description }}</p>
-          {% if project.links.size > 0 %}
-          <div class="card__links">
-            {% for link in project.links %}
-            <a href="{{ link.url }}" class="btn btn--sm btn--ghost" target="_blank" rel="noopener noreferrer">{% include link-icon.html label=link.label %}{{ link.label }}</a>
-            {% endfor %}
-          </div>
-          {% endif %}
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-    <div style="text-align: center; margin-top: var(--space-8);">
-      <a href="{{ '/projects/' | relative_url }}" class="btn btn--outline">View All Projects →</a>
-    </div>
-  </div>
-</section>
-
-<!-- Leadership & Honors -->
-<section class="section--sm">
-  <div class="container">
-    <h2 class="section-heading">Leadership &amp; Honors</h2>
-    <ul>
-      <li>MEng with Distinction, University of Cambridge (2026); master's project ranked #1 in Information and Electrical Engineering and nominated for the IET Prize.</li>
-      <li>Vice President, Cambridge University Engineering Society: grew the careers fair to 600+ students and 25 firms, and secured sponsors including Jane Street, Citadel, and D. E. Shaw.</li>
-      <li>Director of Technical Consulting Projects, Hackbridge, a student consultancy for start-ups.</li>
-      <li>President, Trinity Badminton Club.</li>
-      <li>Top 75 nationally in the British Physics Olympiad and the British Astrophysics Olympiad.</li>
-    </ul>
-  </div>
-</section>
-
-<!-- Experience -->
-<section class="section--sm section--alt">
-  <div class="container">
-    <h2 class="section-heading section-heading--center">Experience</h2>
-    <div class="affiliations">
-      {% for org in site.data.experience %}
-      <a href="{{ org.url }}" class="affiliation" target="_blank" rel="noopener noreferrer">
-        <span class="affiliation__mark" aria-hidden="true">{{ org.mark }}</span>
-        <span class="affiliation__name">{{ org.name }}</span>
-        <span class="affiliation__role">{{ org.role }}</span>
-        <span class="affiliation__date">{{ org.date }}</span>
-      </a>
-      {% endfor %}
-    </div>
-  </div>
-</section>
+<script>
+  (function () {
+    var links = [].slice.call(document.querySelectorAll('.toc a'));
+    if (!links.length || !('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        links.forEach(function (a) { a.classList.toggle('is-active', a.hash === '#' + e.target.id); });
+      });
+    }, { rootMargin: '-30% 0px -65% 0px' });
+    links.forEach(function (a) { io.observe(document.querySelector(a.hash)); });
+  })();
+</script>

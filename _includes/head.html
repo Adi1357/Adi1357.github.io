@@ -1,46 +1,16 @@
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
-
-{% if page.excerpt %}
-<meta name="description" content="{{ page.excerpt | strip_html | truncatewords: 50 }}">{% elsif site.description %}
-<meta name="description" content="{{ site.description }}">{% endif %}
-
-<!-- Open Graph -->
-<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+<meta name="description" content="{{ site.description }}">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="{{ site.title }}">
+<meta property="og:description" content="{{ site.description }}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ page.url | absolute_url }}">
-{% if page.excerpt %}
-<meta property="og:description" content="{{ page.excerpt | strip_html | truncatewords: 50 }}">{% endif %}
-{% if site.owner.avatar %}
-<meta property="og:image" content="{{ '/images/' | append: site.owner.avatar | absolute_url }}">{% endif %}
-
-<!-- Preconnect for fonts -->
+<meta property="og:image" content="{{ '/images/' | append: site.owner.avatar | absolute_url }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<!-- Styles -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&display=swap">
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-
-<!-- Favicon -->
-<link rel="shortcut icon" href="{{ '/favicon.ico' | relative_url }}">
-<link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
-
-<!-- Canonical -->
-<link rel="canonical" href="{{ page.url | absolute_url }}">
-
-<!-- Dark mode & sensor mode: prevent flash of wrong theme -->
-<script>
-    (function () {
-        var theme = localStorage.getItem('theme');
-        if (theme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-        } else {
-            document.documentElement.setAttribute('data-theme', 'light');
-        }
-        var sensor = localStorage.getItem('sensor') === 'thermal' ? 'thermal' : 'visible';
-        document.documentElement.setAttribute('data-sensor', sensor);
-    })();
-</script>

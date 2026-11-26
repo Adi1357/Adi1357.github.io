@@ -1,42 +1,28 @@
-# Research
-# Fields: title, authors, venue (string) or venues (list), year, thumbnail (image or .mp4),
-#         links (list of {label, url}), awards (list of {label, icon}), description,
-#         featured (bool), highlight (bool), categories (list: 3d-vision, robotics)
+# Research entries, shown newest first as written. Images are cropped to 3:2 by CSS.
 
 - title: "Which 3D Errors Matter in Robot Video? A Study on DROID"
   authors: "<strong>Aditya Jain</strong>"
   venue: "Independent research"
   year: 2026
-  featured: true
-  highlight: true
-  categories: ["3d-vision", "robotics"]
-  thumbnail: "/images/research-droid.jpg"
-  links: []
-  description: "On 100 DROID robot clips, tested whether video-derived 3D picks out the true arm motion among 16 candidates (chance: 6%). A flat plane at the right depth scored 85% vs. 66% for a monocular depth network placed 2.5× too far: metric scale mattered more than detail."
+  image: /images/research-droid.jpg
+  alt: "DROID robot camera frames beside depth warped from video-derived 3D"
+  summary: "On 100 DROID robot clips, I tested whether video-derived 3D picks out the true arm motion among 16 candidates (chance: 6%). A flat plane at the right depth scored 85% vs. 66% for a monocular depth network placed 2.5× too far: metric scale mattered more than detail."
 
 - title: "AI-Powered 3D Scene Transmission: 3D Human Telepresence from Three Webcams"
   authors: "<strong>Aditya Jain</strong>, supervised by Dr. Matthew A. Johnson (Microsoft)"
-  venue: "MEng Thesis, University of Cambridge"
+  venue: "MEng thesis, University of Cambridge"
   year: 2026
-  featured: true
-  highlight: false
-  categories: ["3d-vision"]
-  thumbnail: "/images/research-vggt.jpg"
+  image: /images/research-vggt.jpg
+  alt: "3D human reconstructions from LaRa, DUSt3R, pretrained VGGT and fine-tuned VGGT"
   awards:
-    - label: "Ranked #1 in Information & Electrical Engineering"
-      icon: "🥇"
-    - label: "IET Prize nominee"
-      icon: "🏅"
-  links: []
-  description: "A prototype that reconstructs people in 3D from three webcams in under a second per frame. Fine-tuning VGGT, a transformer 3D foundation model, on rendered humans cut reconstruction error 6× versus the pretrained model and 2.8× versus the closest competing method."
+    - "Ranked #1 in Information & Electrical Engineering"
+    - "IET Prize nominee"
+  summary: "A prototype that reconstructs people in 3D from three webcams in under a second per frame. Fine-tuning VGGT, a transformer 3D foundation model, on rendered humans cut reconstruction error 6× versus the pretrained model and 2.8× versus the closest competing method."
 
 - title: "Small Residual Networks Beat Pretrained Super-Resolution on Voxel Depth"
   authors: "<strong>Aditya Jain</strong>, supervised by Dr. Matthew A. Johnson (Microsoft)"
-  venue: "MEng Thesis, University of Cambridge"
+  venue: "MEng thesis, University of Cambridge"
   year: 2026
-  featured: false
-  highlight: false
-  categories: ["3d-vision"]
-  thumbnail: "/images/research-sr.jpg"
-  links: []
-  description: "Pretrained super-resolution models (SwinIR, HAT, Real-ESRGAN) lost to nearest-neighbour upscaling on voxel depth by up to 6 dB. A sub-1M-parameter residual network beat them all and cut depth error by over 30%."
+  image: /images/research-sr.jpg
+  alt: "Ground-truth depth of a person beside the residual network's error map"
+  summary: "Pretrained super-resolution models (SwinIR, HAT, Real-ESRGAN) lost to nearest-neighbour upscaling on voxel depth by up to 6 dB. A sub-1M-parameter residual network beat them all and cut depth error by over 30%."

@@ -1,15 +1,17 @@
-# Aditya Jain — Personal Website
+# adi1357.github.io
 
-Personal website built with [Jekyll](https://jekyllrb.com/) and hosted on [GitHub Pages](https://pages.github.com/).
-Design adapted from [Sriram Narayanan's site](https://github.com/nnsriram97/nnsriram97.github.io) (MIT licence; see `LICENSE`).
+Personal website of Aditya Jain, built with [Jekyll](https://jekyllrb.com/) on GitHub Pages.
 
 ## Edit content
 
-- Bio, news and the PhD call-out: `index.md`
-- Research entries: `_data/research.yml`
+- About text, news and the PhD note: `index.md`
+- Research: `_data/research.yml`
 - Projects: `_data/projects.yml`
-- Experience row: `_data/experience.yml`
-- Name, links, CV path: `_config.yml` (`owner.cv: /files/cv.pdf` shows the CV button)
+- Experience: `_data/experience.yml`
+- Honors and leadership: `_data/honors.yml`
+- Name, links, CV path: `_config.yml` (`owner.cv: /files/cv.pdf` adds a CV link)
+
+Styles are plain CSS in `assets/css/main.css`. Light and dark themes follow the system setting.
 
 ## Local preview
 

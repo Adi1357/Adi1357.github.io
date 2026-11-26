@@ -1,54 +1,33 @@
-# Projects
-# Fields: title, description, thumbnail, year, tags, links (list of {label, url}), featured (bool)
+# Projects, newest first. url is optional; kind is an optional label after the year.
 
-- title: "Neil: An Autonomous AI Agent for Scientists"
-  description: "Building Neil at Seal: sandboxed code execution, persistent memory, an independent verifier, and an LLM evaluation framework."
-  thumbnail: "/images/projects/neil.svg"
+- title: "Neil: an autonomous AI agent for scientists"
   year: 2026
-  tags: ["agents", "llm-evals"]
-  featured: true
-  links:
-    - label: "Seal"
-      url: "https://seal.run"
+  kind: Seal
+  url: https://seal.run
+  summary: "Sandboxed code execution, persistent memory, an independent verifier, and an LLM evaluation framework for an agent used by pharmaceutical scientists."
 
-- title: "Real-Time Surgical Tool-Tip Detection"
-  description: "One-day XRLabs challenge: two YOLO detectors that must agree. Fixing a keypoint-tolerance default cut median tip error over 4×."
-  thumbnail: "/images/projects/tooltip.svg"
+- title: "Real-time surgical tool-tip detection"
   year: 2026
-  tags: ["computer-vision", "detection"]
-  featured: true
-  links: []
+  kind: XRLabs challenge
+  summary: "Two YOLO detectors that must agree, built in one day. Fixing a keypoint-tolerance default cut median tip error more than 4×."
 
-- title: "IoT Network SLA Monitoring and Anomaly Detection"
-  description: "At Eseye: IoT network SLA monitoring over MQTT and AWS, with unsupervised anomaly detection feeding a live dashboard."
-  thumbnail: "/images/projects/iot.svg"
+- title: "IoT network SLA monitoring"
   year: 2024
-  tags: ["cloud", "anomaly-detection"]
-  featured: false
-  links: []
+  kind: Eseye
+  summary: "SLA monitoring over MQTT and AWS, with unsupervised anomaly detection feeding a live dashboard."
 
-- title: "Autonomous Block-Sorting Robot"
-  description: "Cambridge Integrated Design Project: co-wrote the C++ for a team-built Arduino robot that follows lines, searches by ultrasound, and classifies blocks magnetically."
-  thumbnail: "/images/projects/robot.svg"
+- title: "Autonomous block-sorting robot"
   year: 2023
-  tags: ["robotics", "embedded"]
-  featured: true
-  links: []
+  kind: Cambridge
+  summary: "Co-wrote the C++ for a team-built Arduino robot that follows lines, searches by ultrasound, and sorts blocks by magnetism."
 
-- title: "Solar Car Telemetry"
-  description: "Cambridge University Eco Racing: STM32/XBee radio telemetry and the driver interface for solar cars built to race across Australia."
-  thumbnail: "/images/projects/solar.svg"
+- title: "Solar car telemetry"
   year: 2023
-  tags: ["embedded", "telemetry"]
-  featured: false
-  links: []
+  kind: Eco Racing
+  summary: "STM32/XBee radio telemetry and the driver interface for solar cars built to race across Australia."
 
-- title: "Mars Lander Simulation"
-  description: "Cambridge coursework: wrote the autopilot for a C++ Mars lander simulator, controlling throttle, parachute, and attitude for a soft landing."
-  thumbnail: "/images/projects/lander.svg"
+- title: "Mars lander simulation"
   year: 2023
-  tags: ["simulation", "control"]
-  featured: false
-  links:
-    - label: "Code"
-      url: "https://github.com/Adi1357/Simulation-of-Mars-Lander"
+  kind: Coursework
+  url: https://github.com/Adi1357/Simulation-of-Mars-Lander
+  summary: "Autopilot for a C++ Mars lander simulator, controlling throttle, parachute, and attitude for a soft landing."

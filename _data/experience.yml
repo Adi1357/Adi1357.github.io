@@ -1,31 +1,31 @@
-# Experience row (oldest first). mark = icon shown in the logo tile.
+# Experience, newest first. current: true marks the filled dot.
 
-- name: University of Cambridge
-  mark: "🎓"
-  role: MEng, Trinity College
-  date: Oct 2022 – Jun 2026
-  url: https://www.cam.ac.uk/
-
-- name: Marshall Futureworx
-  mark: "✈️"
-  role: Engineering Intern
-  date: Summer 2023
-  url: https://marshallgroup.co.uk/
-
-- name: Eseye
-  mark: "📡"
-  role: Software Intern
-  date: Summer 2024
-  url: https://www.eseye.com/
-
-- name: Lazard
-  mark: "📈"
-  role: Summer Analyst
-  date: Summer 2025
-  url: https://www.lazard.com/
-
-- name: Seal
-  mark: "🧪"
-  role: Founding Platform Engineer
-  date: Sep 2026 – Present
+- role: Founding Platform Engineer
+  org: Seal
   url: https://seal.run/
+  date: Sep 2026 – now
+  current: true
+  note: "Building Neil, an autonomous AI agent for pharmaceutical scientists. Seal is a YC S20 company."
+
+- role: Summer Analyst
+  org: Lazard
+  url: https://www.lazard.com/
+  date: Summer 2025
+  note: "Industrials M&A, London."
+
+- role: Technical Consulting Software Intern
+  org: Eseye
+  url: https://www.eseye.com/
+  date: Summer 2024
+  note: "IoT network monitoring and anomaly detection on AWS."
+
+- role: Engineering Intern
+  org: Marshall Futureworx
+  url: https://marshallgroup.co.uk/
+  date: Summer 2023
+
+- role: MEng, Information & Computer Engineering
+  org: University of Cambridge
+  url: https://www.cam.ac.uk/
+  date: 2022 – 2026
+  note: "Trinity College. Distinction; master's project ranked #1 in Information & Electrical Engineering."
