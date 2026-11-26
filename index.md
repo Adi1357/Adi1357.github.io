@@ -17,7 +17,7 @@ news:
   - date: "Oct 2026"
     text: "Built a real-time surgical tool-tip detector in a one-day XRLabs Vision Challenge."
   - date: "Sep 2026"
-    text: 'Joined <a href="https://seal.run">Seal</a> (YC S20) as a Founding Platform Engineer, building Neil, an autonomous AI agent for pharmaceutical scientists.'
+    text: 'Joined <a href="https://seal.run">Seal</a> (YC S20) as a Founding Engineer, building Neil, an autonomous AI agent for pharmaceutical scientists.'
   - date: "Jun 2026"
     text: "Graduated from Cambridge with an MEng with Distinction. My master's project ranked #1 in Information and Electrical Engineering and was nominated for the IET Prize."
   - date: "Oct 2025"
@@ -34,6 +34,6 @@ news:
 
 I build machine learning systems for *3D computer vision* and *AI agents*. I am interested in recovering reliable 3D structure from ordinary cameras, and in finding out which errors in that structure actually matter for robots and other systems that act on it.
 
-Currently, I am a Founding Platform Engineer at [Seal](https://seal.run) (YC S20), where I build Neil, an autonomous AI agent for pharmaceutical scientists: its sandboxed code execution, persistent memory, independent verifier, and evaluation framework.
+Currently, I am a Founding Engineer at [Seal](https://seal.run) (YC S20), where I build Neil, an autonomous AI agent for pharmaceutical scientists: its sandboxed code execution, persistent memory, independent verifier, and evaluation framework.
 
 I completed my MEng in Information and Computer Engineering at the [University of Cambridge](https://www.cam.ac.uk/) (Trinity College) with Distinction. For my master's thesis, supervised by Dr. Matthew A. Johnson (Microsoft), I built a 3D telepresence prototype that reconstructs people from three webcams, fine-tuning the VGGT foundation model for sparse-view human reconstruction.

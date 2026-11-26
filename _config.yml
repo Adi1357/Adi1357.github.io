@@ -1,6 +1,6 @@
 title: Aditya Jain
 url: https://adi1357.github.io
-description: "Aditya (Adi) Jain: ML and research engineer working on 3D computer vision and AI agents. Founding Platform Engineer at Seal; MEng, University of Cambridge."
+description: "Aditya (Adi) Jain: ML and research engineer working on 3D computer vision and AI agents. Founding Engineer at Seal; MEng, University of Cambridge."
 markdown: kramdown
 plugins:
   - jekyll-sitemap
@@ -8,7 +8,7 @@ plugins:
 owner:
   name: Aditya Jain
   avatar: avatar.jpg
-  role: Founding Platform Engineer at Seal
+  role: Founding Engineer at Seal
   education: MEng, University of Cambridge
   location: London, UK
   email: adi.jain1357@gmail.com
