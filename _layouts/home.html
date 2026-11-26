@@ -7,7 +7,7 @@ layout: default
     <img class="side__photo" src="{{ '/images/' | append: o.avatar | relative_url }}" alt="Photo of {{ o.name }}" width="104" height="104">
     <h1 class="side__name">{{ o.name }}</h1>
     <p class="side__role">{{ o.role }}<br>{{ o.education }}</p>
-    {% if page.phd %}<a class="pill" href="#about"><span class="pill__dot" aria-hidden="true"></span>{{ page.phd.badge }}</a>{% endif %}
+    {% if page.open_to %}<a class="pill" href="#about"><span class="pill__dot" aria-hidden="true"></span>{{ page.open_to.badge }}</a>{% endif %}
 
     <nav class="toc" aria-label="Sections">
       <a href="#about">About</a>
@@ -30,11 +30,12 @@ layout: default
     <section class="sec" id="about">
       <h2 class="sec__label">About</h2>
       <div class="prose">{{ content }}</div>
-      {% if page.phd %}
+      {% if page.open_to %}
       <div class="note">
-        <p class="note__title">{{ page.phd.title }}</p>
-        <p>{{ page.phd.text }}</p>
-        <ul class="tags">{% for t in page.phd.topics %}<li>{{ t }}</li>{% endfor %}</ul>
+        <p class="note__title">{{ page.open_to.title }}</p>
+        <p>{{ page.open_to.text }}</p>
+        <ul class="tags">{% for t in page.open_to.topics %}<li>{{ t }}</li>{% endfor %}</ul>
+        <a class="note__cta" href="mailto:{{ o.email }}">Get in touch <span aria-hidden="true">→</span></a>
       </div>
       {% endif %}
     </section>

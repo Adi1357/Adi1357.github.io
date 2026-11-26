@@ -4,7 +4,7 @@ Personal website of Aditya Jain, built with [Jekyll](https://jekyllrb.com/) on G
 
 ## Edit content
 
-- About text, news and the PhD note: `index.md`
+- About text, news and the "open to" note: `index.md`
 - Research: `_data/research.yml`
 - Projects: `_data/projects.yml`
 - Experience: `_data/experience.yml`

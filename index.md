@@ -1,9 +1,9 @@
 ---
 layout: home
-phd:
-  badge: "Applying for PhD · Fall 2027"
-  title: "Applying for PhDs, Fall 2027"
-  text: "I am applying to PhD programs in robotics and computer vision, and would love to hear from researchers working on 3D perception, world models, and robot learning."
+open_to:
+  badge: "Open to PhD & industry roles"
+  title: "Open to PhD and industry roles"
+  text: "I am applying to PhD programs for Fall 2027 and am also open to research and engineering roles. I would love to hear from labs and teams working on 3D perception, robotics, world models, or AI agents."
   topics:
     - 3D reconstruction
     - 3D foundation models
